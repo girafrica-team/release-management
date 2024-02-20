@@ -1,5 +1,5 @@
 releasePlan:
   test1:
-    url: test1
+    url: test3
   test2:
-    url: test2
+    url: test4
