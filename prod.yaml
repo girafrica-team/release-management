@@ -1,7 +1,7 @@
 releasePlan:
   test11:
-    version: 1
+    featureFlags: 1
     github-name: test1
   test22:
-    version: 1
+    featureFlags: 1
     github-name: test2
