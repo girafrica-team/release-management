@@ -1,7 +1,0 @@
-releasePlan:
-  test11:
-    github-name: test1
-    version: 1
-  test22:
-    github-name: test2
-    version: 1
