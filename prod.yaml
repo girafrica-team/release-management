@@ -1,5 +1,7 @@
 releasePlan:
   test1:
     github-name: test1
+    version: 1
   test2:
     github-name: test2
+    version: 1
