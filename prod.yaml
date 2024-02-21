@@ -1,5 +1,13 @@
+releaseType: patch
+
+releaseDescription: 0.7.x Feature work
+
+jiraReleaseLink: https://jira.unity3d.com/projects/UDAM/versions/73007
+
 releasePlan:
   test1:
+    feature-flags: SendNotifications, AutoPreviews
     github-name: test1
   test2:
+    feature-flags: EnableAssetStorageOverGrpc
     github-name: test2
