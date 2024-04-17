@@ -2,7 +2,7 @@ releasePlan:
   test1:
     featureFlags: 1
     github-name: test1
-    branch: main
+    branch: hotfix
   test22:
     featureFlags: 1
     github-name: test2
