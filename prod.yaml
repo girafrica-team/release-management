@@ -2,6 +2,8 @@ releasePlan:
   test11:
     featureFlags: 1
     github-name: test1
+    branch: main
   test22:
     featureFlags: 1
     github-name: test2
+    branch: main
