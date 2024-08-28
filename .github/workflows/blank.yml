@@ -19,6 +19,7 @@ jobs:
   Validate:
     runs-on: ubuntu-latest
     name: Validate
+    needs: [DeployTest]
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
@@ -29,7 +30,7 @@ jobs:
         version: [test1, test2, test3, test4, test5, test6, test7, test8, test9, test10]
     runs-on: ubuntu-latest
     name: Deploy stg ${{ matrix.version }} to AKS
-    needs: [DeployTest]
+    needs: [DeployTest,Validate]
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
