@@ -16,6 +16,13 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
+  Validate:
+    runs-on: ubuntu-latest
+    name: Validate
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+
   DeployStg:
     strategy:
       matrix:
