@@ -3,8 +3,6 @@ name: CI
 on:
   schedule:
     - cron: '*/5 * * * *'
-      env:
-        feature_flags_test: 'feature-flags: EnableCollaborationNotifications'
 
   workflow_dispatch:
     inputs:
@@ -12,6 +10,9 @@ on:
         description: 'Define feature flags for the TEST deployment. If you do not use any feature flags, please let only just feature-flags:'
         required: false
         default: 'feature-flags: EnableCollaborationNotifications'
+
+env:
+  feature_flags_test: ${{ github.event.inputs.feature_flags_test || "feature-flags: EnableCollaborationNotifications" }}
 
 jobs:
   build:
