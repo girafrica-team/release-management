@@ -11,14 +11,16 @@ on:
         required: false
         default: 'feature-flags: EnableCollaborationNotifications'
 
-env:
-  feature_flags_test: ${{ github.event.inputs.feature_flags_test || "feature-flags: EnableCollaborationNotifications" }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set the variables
+        env:
+          feature_flags_test: 'feature-flags: EnableCollaborationNotifications'
+        run: echo "feature_flags_test=${{ github.event.inputs.feature_flags_test || env.feature_flags_test }}" >> $GITHUB_ENV
+        
       - uses: actions/checkout@v4
 
       - name: Run a multi-line script
