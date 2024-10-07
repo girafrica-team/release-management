@@ -1,28 +1,25 @@
-name: CI
-
-on:
-  schedule:
-    - cron: '*/5 * * * *'
-
-  workflow_dispatch:
-    inputs:
-      feature_flags_test:
-        description: 'Define feature flags for the TEST deployment. If you do not use any feature flags, please let only just feature-flags:'
-        required: false
-        default: 'feature-flags: EnableCollaborationNotifications'
+name: Checkout Repository
+on: [pull_request, issue_comment]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    checkout:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Set the variables
-        env:
-          feature_flags_test: 'feature-flags: EnableCollaborationNotifications'
-        run: echo "feature_flags_test=${{ github.event.inputs.feature_flags_test || env.feature_flags_test }}" >> $GITHUB_ENV
-        
-      - uses: actions/checkout@v4
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
 
-      - name: Run a multi-line script
-        run: |
-          echo ${{ env.feature_flags_test }}
+    print_text:
+        if: github.event_name == 'issue_comment' && github.event.issue.pull_request
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Print TEXT
+          run: echo "TEXT"
+
+    print_text2:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Print TEXT2
+          run: echo "TEXT2"
