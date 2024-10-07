@@ -10,6 +10,7 @@ jobs:
 
     print_text:
         runs-on: ubuntu-latest
+        if: ${{ !startsWith(github.event.pull_request.title, '[Skip Checks]') }}
         steps:
         - name: Print TEXT
           run: |
