@@ -10,7 +10,7 @@ jobs:
           uses: actions/checkout@v2
 
     print_text:
-        if: ${{ !startsWith(github.event.pull_request.title, '[Skip Checks]') }}
+        if: ${{ !startsWith(github.event.pull_request.title, '[Skip Checks]') }} 
         runs-on: ubuntu-latest
 
         steps:
