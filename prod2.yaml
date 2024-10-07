@@ -4,4 +4,4 @@ releasePlan:
     github-name: test1
   test22:
     feature-flags: EnableAssetStorageOverGrpc
-    github-name: test2
+    github-name: test22
