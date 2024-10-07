@@ -10,9 +10,7 @@ jobs:
           uses: actions/checkout@v2
 
     print_text:
-        if: ${{ !startsWith(github.event.pull_request.title, '[Skip CC Check]') || !contains(github.event.review.user.login, 'EugenePavlikov')}} 
         runs-on: ubuntu-latest
-
         steps:
         - name: Print TEXT
           run: |
@@ -20,7 +18,7 @@ jobs:
         - uses: trstringer/manual-approval@v1
           with:
             secret: ${{ github.TOKEN }}
-            approvers: EugenePavlikov
+            approvers: girafrica
             minimum-approvals: 1
             issue-title: "Deploying v1.3.5 to prod from staging"
             issue-body: "Please approve or deny the deployment of version v1.3.5."
