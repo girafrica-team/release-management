@@ -15,16 +15,6 @@ jobs:
         - name: Print TEXT
           run: |
               echo "TEXT"
-        - uses: trstringer/manual-approval@v1
-          with:
-            secret: ${{ github.TOKEN }}
-            approvers: girafrica
-            minimum-approvals: 1
-            issue-title: "Deploying v1.3.5 to prod from staging"
-            issue-body: "Please approve or deny the deployment of version v1.3.5."
-            exclude-workflow-initiator-as-approver: false
-            additional-approved-words: ''
-            additional-denied-words: ''
               
     print_text2:
         runs-on: ubuntu-latest
