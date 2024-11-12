@@ -18,7 +18,7 @@ jobs:
 
         steps:
         - name: Print TEXT
-          run: echo ${{ env.TEST }}
+          run: echo ${{ vars.TEST }}
               
     print_text2:
         runs-on: ubuntu-latest
