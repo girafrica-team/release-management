@@ -10,7 +10,7 @@ jobs:
           uses: actions/checkout@v2
 
     print_text:
-        env: Production
+        environment: Production
         runs-on: ubuntu-latest
 
         steps:
