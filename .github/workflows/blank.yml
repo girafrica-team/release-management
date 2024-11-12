@@ -10,9 +10,9 @@ env:
 
 jobs:
     print_text:
+        name: Approval
         environment: Production
         runs-on: ubuntu-latest
-
         steps:
         - name: Print TEXT
           run: |
