@@ -4,6 +4,10 @@ on:
     push:
         branches:
           - main
+env:
+    ENV_VAR: ${{ vars.ENV_VAR }}
+    REP_VAR: ${{ vars.REP_VAR }}
+
 jobs:
     checkout:
         runs-on: ubuntu-latest
@@ -18,7 +22,9 @@ jobs:
 
         steps:
         - name: Print TEXT
-          run: echo ${{ vars.TEST }}
+          run: |
+              echo ${{ env.ENV_VAR }}
+              echo ${{ env.REP_VAR }}
               
     print_text2:
         runs-on: ubuntu-latest
