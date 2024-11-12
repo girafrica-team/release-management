@@ -1,7 +1,7 @@
 releasePlan:
   test11:
-    feature-flags: SendNotifications, AutoPreviews
+    feature-flags: test
     github-name: test1
   test22:
-    feature-flags: EnableAssetStorageOverGrpc
+    feature-flags: test
     github-name: test21
