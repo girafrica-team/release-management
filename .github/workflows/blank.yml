@@ -10,14 +10,13 @@ jobs:
           uses: actions/checkout@v2
 
     print_text:
-        if: ${{ !startsWith(github.event.pull_request.title, '[Skip CC Check]') }} 
+        env: Production
         runs-on: ubuntu-latest
 
         steps:
         - name: Print TEXT
           run: |
               echo "TEXT"
-              exit 1
               
     print_text2:
         runs-on: ubuntu-latest
